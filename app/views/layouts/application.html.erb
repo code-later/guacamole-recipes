@@ -1,14 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>GuacamoleRecipes</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Guacamole Recipes" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Guacamole Recipes", root_url %></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <% if current_user %>
+            <li>
+              <li class="has-dropdown">
+                <%= link_to current_user.username %>
+                <ul class="dropdown">
+                  <li>
+                    <%= link_to "Profil", edit_user_url(current_user) %>
+                  </li>
+                  <li>
+                    <%= link_to "My Recipes", user_recipes_url(current_user) %>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Logout" %>
+                  </li>
+                </ul>
+              </li>
+            </li>
+          <% else %>
+            <li class="has-form">
+              <%= link_to "Login", login_url, class: "button" %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Sign Up", new_user_url %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="row layout--content">
+      <div class="small-8 small-centered columns">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="layout--footer">
+      <div class="row">
+        <div class="small-8 small-centered columns layout--footer-content">
+          <ul class="layout--footer-list">
+            <li class="layout--footer-list-item">Copyright &copy; <%= Date.today.year %> by <%= link_to "ArangoDB", "http://arangodb.org" %></li>
+            <li class="layout--footer-list-item">Source on <%= link_to "GitHub", "http://github.com" %></li>
+            <li class="layout--footer-list-item">Hosted on <%= link_to "Heroku", "http://heroku.com" %> with the <%= link_to "myArangoDB Addon", "http://myarangodb.com" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

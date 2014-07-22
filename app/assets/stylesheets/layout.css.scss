@@ -1,0 +1,17 @@
+.layout--content {
+  margin-top: rem-calc(50);
+}
+
+.layout--footer {
+  background-color: $primary-bg-color;
+}
+
+.layout--footer-content {
+  color: #c0c0c0;
+}
+
+.layout--footer-list {
+  @include inline-list;
+  margin-top: rem-calc(20);
+  font-size: rem-calc(13);
+}
