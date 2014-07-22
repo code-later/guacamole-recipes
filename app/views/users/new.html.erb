@@ -1,0 +1,17 @@
+<h2>Sign up now to Guacamole Recipes</h2>
+
+<p>
+  Having an account allows you to publish your own guacamole and avocado
+  related recipes. Additionally you can vote other recipes up or down.
+</p>
+
+<p>
+  And if you wonder, all of that <strong>awesomeness</strong> is totally free!
+</p>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, required: true %>
+  <%= f.input :password, required: true %>
+  <%= f.input :password_confirmation, required: true %>
+  <%= f.button :submit %>
+<% end %>
