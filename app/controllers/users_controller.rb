@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if UsersCollection.save(@user)
+      session[:current_user_key] = @user.key
       redirect_to root_url
     else
       render :new
