@@ -1,0 +1,7 @@
+<h3>Login</h3>
+
+<%= simple_form_for :user, url: session_url do |f| %>
+  <%= f.input :username, required: false, label: 'Username' %>
+  <%= f.input :password, required: false %>
+  <%= f.submit 'Login', class: 'button' %>
+<% end %>

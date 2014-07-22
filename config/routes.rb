@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resources :recipes
   end
 
-  resource :session, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
 
-  get 'login', to: 'session#new'
+  get 'login', to: 'sessions#new'
+  delete 'logout', to: 'sessions#destroy'
 end
