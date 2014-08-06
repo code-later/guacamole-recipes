@@ -1,0 +1,13 @@
+<h3>Create a new awesome Recipe</h3>
+
+<%= simple_nested_form_for @recipe do |f| %>
+  <%= f.input :title %>
+  <%= f.input :preparations, as: :text %>
+  <%= f.simple_fields_for :ingredients, [Ingredient.new] do |ingredients_form| %>
+    <%= ingredients_form.input :ingredient %>
+    <%= ingredients_form.input :amount %>
+  <% end %>
+  <%= f.link_to_add "Add Ingredient", :ingredients %>
+
+  <%= f.button :submit %>
+<% end %>
