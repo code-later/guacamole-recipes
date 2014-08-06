@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <h3 class="subheader"><%= @recipe.title %></h3>
+
+    <p>
+      <%= @recipe.preparations %>
+    </p>
+
+    <h3><small>Ingredients</small></h3>
+
+    <table class="recipes--ingredients-list">
+      <thead>
+        <th width="100">Amount</th>
+        <th>Ingredient</th>
+      </thead>
+      <tbody>
+        <%= render @recipe.ingredients %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

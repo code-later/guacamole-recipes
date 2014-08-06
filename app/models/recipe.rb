@@ -1,7 +1,7 @@
 class Recipe
   include Guacamole::Model
 
-  accepts_nested_attributes_for :ingredients
+  # accepts_nested_attributes_for :ingredients
 
   attribute :title, String
   attribute :preparations, String

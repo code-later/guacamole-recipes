@@ -7,6 +7,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def show
+    @recipe = RecipesCollection.by_key(params[:id])
+  end
+
   def create
     @recipe = Recipe.new params[:recipe]
     RecipesCollection.save @recipe
