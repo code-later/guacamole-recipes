@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/culturecode/nested_form.git
+  revision: 4bf3a8086644cab75bd4194cc47595d91ff2c747
+  specs:
+    nested_form (0.3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -161,6 +167,7 @@ DEPENDENCIES
   guacamole
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form!
   rails (= 4.1.4)
   rails_12factor
   sass-rails (~> 4.0.3)

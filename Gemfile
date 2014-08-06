@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'foundation-rails'
 gem 'guacamole'
+gem 'nested_form', git: 'https://github.com/culturecode/nested_form.git'
 gem 'simple_form'
 
 group :production do
