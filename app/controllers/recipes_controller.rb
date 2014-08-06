@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   def index
+    @recipes = RecipesCollection.all.to_a
   end
 
   def new

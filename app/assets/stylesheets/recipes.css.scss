@@ -1,3 +1,15 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.recipes--header {
+  text-align: center;
+}
+
+.recipes--recipe-list-item {
+  @include grid-column($columns: 10, $center: true);
+}
+
+.recipes--ingredients-list {
+  width: 100%;
+}
+
+.ingredient--amount {
+  font-style: italic;
+}
