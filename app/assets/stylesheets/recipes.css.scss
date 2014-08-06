@@ -10,6 +10,19 @@
   width: 100%;
 }
 
+.recipe--comments-list {
+  margin-top: rem-calc(20);
+  padding-top: rem-calc(10);
+
+  .comment {
+    padding: rem-calc(10) rem-calc(5);
+  }
+
+  .comment:nth-of-type(even) {
+    background-color: scale-color($pink, $lightness: 90%);
+  }
+}
+
 .ingredient--amount {
   font-style: italic;
 }

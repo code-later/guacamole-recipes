@@ -20,3 +20,23 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <div class="row">
+      <div class="small-10 small-centered columns">
+        <h3><small>Post new Comment</small></h3>
+
+        <%= simple_form_for [@recipe, Comment.new], remote: true do |comment_form| %>
+          <%= comment_form.input :text, as: :text, placeholder: 'Your comment here', label: false %>
+          <%= comment_form.button :submit %>
+        <% end %>
+      </div>
+    </div>
+
+    <h3 class="subheader">Comments</h3>
+
+    <div class="recipe--comments-list">
+      <%= render 'comments' %>
+    </div>
+  </div>
+</div>

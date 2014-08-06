@@ -59,8 +59,9 @@ $body-font-weight: $font-weight-normal;
 // $default-float: left;
 
 // We use these as default colors throughout
+$pink: #a11f4e;
 $primary-color: #249dba;
-$primary-bg-color: #a11f4e;
+$primary-bg-color: $pink;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;

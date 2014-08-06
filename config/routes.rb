@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :recipes
+  resources :recipes do
+    resources :comments
+  end
+
   resources :users do
     resources :recipes
   end

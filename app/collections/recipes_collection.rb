@@ -3,7 +3,7 @@ class RecipesCollection
 
   map do
     # references :user
-    # embeds :comments
+    embeds :comments
     embeds :ingredients
   end
 end
