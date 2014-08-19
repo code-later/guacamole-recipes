@@ -5,7 +5,7 @@ class User
   has_secure_password
 
   validates :username, presence: true
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_blank: true
 
   attribute :username, String
   attribute :password_digest, String
