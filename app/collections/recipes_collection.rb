@@ -2,7 +2,7 @@ class RecipesCollection
   include Guacamole::Collection
 
   map do
-    # references :user
+    references :user
     embeds :comments
     embeds :ingredients
   end

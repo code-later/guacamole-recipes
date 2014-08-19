@@ -8,6 +8,7 @@ class Recipe
   attribute :ingredients, Array[Ingredient]
   attribute :votes, Fixnum, default: 0
   attribute :comments, Array[Comment]
+  attribute :user, User
 
   def ingredients_attributes=(attributes)
     self.ingredients = attributes.values.collect do |attr|
