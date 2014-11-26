@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:current_user_key] = user.key
       redirect_to recipes_url
-    else
+ 
+   else
       flash.now.alert = "Username or Password wrong. Try again."
       render :new
     end
